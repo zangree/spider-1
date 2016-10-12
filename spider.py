@@ -6,7 +6,7 @@ import re
 import time
 
 
-def getHtml(url):
+def getHTML(url):
     r = requests.get(url, headers=headers)
     with open('html.html', 'w', encoding='utf-8') as f:
         f.write(r.text)
@@ -21,6 +21,7 @@ def getURL(html):
     for item in ltObj:
         url_lt.append(item['src'])
     return url_lt
+
 
 def download(ltobj):
     length = len(ltobj)
@@ -42,6 +43,16 @@ def getFile(url):
     pass
 
 
+def genURLs(url, total=1):
+    urls = [url]
+    if total == 1:
+        return urls 
+    for i in range(2, total+1):
+        nxturl = url + 'index' + str(i) + '.html'
+        urls.append(nxturl)
+    return urls
+
+
 if __name__ == "__main__":
     headers = {
         'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
@@ -50,11 +61,24 @@ if __name__ == "__main__":
         'User-Agent': 'Mozilla/5.0 (Windows NT 6.3; WOW64; Trident/7.0; rv:11.0) like Gecko'
     }
 
-
+    HTML = r"F:\IdeaProject\spider\spider\html.html"
     class MyOpener(FancyURLopener):
         version = headers['User-Agent']
     myopener = MyOpener()
 
+    objURLs = []
+    url = input("Please input url: ")
+    total = int(input("How many pages: "))
+    URLs = genURLs(url, total)
+    for URL in URLs:
+        getHTML(URL)
+        url_lt = getURL(HTML)
+        objURLs.extend(url_lt)
+    download(objURLs)
 
-    html = r"F:\IdeaProject\spider\spider\html.html"
-    download(getURL(html))
+    
+    # download(getURL(html))
+    # url = input("Please input url: ")
+    # urls = genURLs(url, 3)
+    # for item in urls:
+    #     print(item)
