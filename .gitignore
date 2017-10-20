@@ -1,2 +1,3 @@
 *.pyc
-szershoufang.json
+*.json
+/lianjiascrapy/szershoufang.json

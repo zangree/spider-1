@@ -18,7 +18,7 @@ class LePuShangPuDetSpider(scrapy.Spider):
                 item = json.loads(item)
                 ids.append(item['id'])
         print(len(ids))
-        for i in range(0, 10):
+        for i in range(2000, 2421):
             start_urls.append(scrapy.Request("http://www.lepu.cn/shop/detail-"+str(ids[i])))
         return start_urls
 

@@ -6,7 +6,7 @@ import scrapy
 from lianjiascrapy.items import XiezilouDetailItem
 
 class XiezilouSpider(scrapy.Spider):
-    name = 'xiezilou'
+    name = 'fangxiezilou'
     allowed_domains = ['fang.com/']
     # start_urls = ['http://wangjingsoho.fang.com/xiangqing/']
 
