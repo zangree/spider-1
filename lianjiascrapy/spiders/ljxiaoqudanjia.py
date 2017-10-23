@@ -14,7 +14,7 @@ class LJXiaoquDanjiaSpider(scrapy.Spider):
             # ,
             #  ('http://bj.lianjia.com/xiaoqu/xicheng/', 54)
             # ,
-            ('http://bj.lianjia.com/xiaoqu/chaoyang/', 59)
+            # ('http://bj.lianjia.com/xiaoqu/chaoyang/', 59)
             # , 
             # ('http://bj.lianjia.com/xiaoqu/haidian/', 56)
             # , 
