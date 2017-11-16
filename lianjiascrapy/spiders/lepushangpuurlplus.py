@@ -13,8 +13,10 @@ class LePuShangPuDetSpider(scrapy.Spider):
     def start_requests(self):
         start_urls = []
         start_requests = []
-        for i in range(1, 787):
-            start_urls.append('http://api.lepu.cn/app/shop/search?districts=01-0&page=' + str(i))
+        for i in range(1, 75):
+            start_urls.append('http://api.lepu.cn/app/shop/search?districts=136-0&page=' + str(i))
+            # 西城: 136-0
+            # 朝阳: 01-0
         for url in start_urls:
             start_requests.append(scrapy.Request(url))
         return start_requests

@@ -148,3 +148,8 @@ class LePuShangPuDetItem(scrapy.Item):
     left_lease = scrapy.Field()
     longest_lease = scrapy.Field()
     type_lease = scrapy.Field()
+    description = scrapy.Field()
+    price_around = scrapy.Field()
+    lng = scrapy.Field() # 经度
+    lat = scrapy.Field() # 纬度
+    website = scrapy.Field()

@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*- 
 
 import time
+import requests
 import json
 import scrapy
 from lianjiascrapy.items import  LePuShangPuDetItem
@@ -13,12 +14,12 @@ class LePuShangPuDetSpider(scrapy.Spider):
     def start_requests(self):
         start_urls = []
         ids = []
-        with open('haidianid.json') as f:
+        with open('xichengid.json') as f:
             for item in f:
                 item = json.loads(item)
                 ids.append(item['id'])
         print(len(ids))
-        for i in range(2000, 2420):
+        for i in range(0, 748):
             start_urls.append(scrapy.Request("http://www.lepu.cn/shop/detail-"+str(ids[i])))
         return start_urls
 
@@ -39,7 +40,7 @@ class LePuShangPuDetSpider(scrapy.Spider):
             item['update'] = update[0].strip()
         else:
             item['update'] = unicode('暂无信息', "utf-8")
-        area =  response.xpath('//div[@class="top-content"]//div[@class="det-text"]/ul[@class="details f16"]/li[2]//span/text()').extract()
+        area =  response.xpath('//div[@class="top-content"]//div[@class="det-text"]/ul[@class="bt3 clearfix"]/li[1]/span/b/text()').extract()
         if area:
             item['area'] = area[0].strip()
         else:
@@ -159,4 +160,14 @@ class LePuShangPuDetSpider(scrapy.Spider):
             item['type_lease'] = type_lease[0].strip()
         else:
             item['type_lease'] = unicode('暂无信息', "utf-8")
+        description = response.xpath('//div[@class="manage_main"]/p/text()').extract()
+        if description:
+            item['description'] = description[0].strip()
+        else:
+            item['description'] = unicode('暂无信息', "utf-8")
+        location_str = 'https://api.map.baidu.com/geocoder/v2/?address=' + item['address'].split(' ')[0] + '&output=json&ak=39GuXLCBZK4Tk7wxdtUZ5NqPbOK1iRRG'
+        location = requests.get(location_str).json()
+        item['lng'] = location['result']['location']['lng']
+        item['lat'] = location['result']['location']['lat']
+        item['website'] = response.url
         yield item
