@@ -15,12 +15,12 @@ class LJXiaoquDanjiaSpider(scrapy.Spider):
             #  ('http://bj.lianjia.com/xiaoqu/xicheng/', 54)
             # ,
             # ('http://bj.lianjia.com/xiaoqu/chaoyang/', 59)
-            # , 
+            # ,
             # ('http://bj.lianjia.com/xiaoqu/haidian/', 56)
-            # , 
+            # ,
             # ('http://bj.lianjia.com/xiaoqu/fengtai/', 40)
-            # , 
-            # ('http://bj.lianjia.com/xiaoqu/shijingshan/', 9)
+            # ,
+            ('http://bj.lianjia.com/xiaoqu/shijingshan/', 9)
         ]
         for item, pages in start_domains:
             for i in range(1, pages):
