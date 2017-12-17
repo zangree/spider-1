@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*- 
+# -*- coding: utf-8 -*-
 
 import time
 import requests
@@ -19,7 +19,7 @@ class LePuShangPuDetSpider(scrapy.Spider):
                 item = json.loads(item)
                 ids.append(item['id'])
         print(len(ids))
-        for i in range(0, 748):
+        for i in range(100, 500):
             start_urls.append(scrapy.Request("http://www.lepu.cn/shop/detail-"+str(ids[i])))
         return start_urls
 
@@ -167,7 +167,23 @@ class LePuShangPuDetSpider(scrapy.Spider):
             item['description'] = unicode('暂无信息', "utf-8")
         location_str = 'https://api.map.baidu.com/geocoder/v2/?address=' + item['address'].split(' ')[0] + '&output=json&ak=39GuXLCBZK4Tk7wxdtUZ5NqPbOK1iRRG'
         location = requests.get(location_str).json()
-        item['lng'] = location['result']['location']['lng']
-        item['lat'] = location['result']['location']['lat']
-        item['website'] = response.url
+        if location['status'] == 0:
+            lng = location['result']['location']['lng']
+            if lng:
+                item['lng'] = lng
+            else:
+                item['lng'] = unicode('暂无信息', 'utf-8')
+            lat = location['result']['location']['lat']
+            if lat:
+                item['lat'] = lat
+            else:
+                item['lat'] = unicode('暂无信息', 'utf-8')
+        else:
+            item['lng'] = unicode('暂无信息', 'utf-8')
+            item['lat'] = unicode('暂无信息', 'utf-8')
+        website = response.url
+        if website:
+            item['website'] = website 
+        else:
+            item['website'] = unicode('暂无信息', 'utf-8')
         yield item
