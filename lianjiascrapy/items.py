@@ -153,3 +153,7 @@ class LePuShangPuDetItem(scrapy.Item):
     lng = scrapy.Field() # 经度
     lat = scrapy.Field() # 纬度
     website = scrapy.Field()
+
+class LianJiaXiaoQuItem(scrapy.Item):
+    name = scrapy.Field()
+    url = scrapy.Field()
