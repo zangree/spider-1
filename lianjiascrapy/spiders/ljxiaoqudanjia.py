@@ -30,7 +30,7 @@ class LJXiaoquDanjiaSpider(scrapy.Spider):
 
     def parse(self, response):
         item = LJXiaoquDanjiaItem()
-        for dj_item  in response.xpath('//div[@class="content"]//ul[@class="listContent"]/li'):
+        for dj_item in response.xpath('//div[@class="content"]//ul[@class="listContent"]/li'):
             name = dj_item.xpath('.//div[@class="title"]//text()').extract()
             print(name)
             item['title'] = name[1].strip()
