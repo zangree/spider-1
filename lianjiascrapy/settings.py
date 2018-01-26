@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-
+import logging
 # Scrapy settings for lianjiascrapy project
 #
 # For simplicity, this file contains only settings considered important or
@@ -90,3 +90,5 @@ ITEM_PIPELINES = {
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+# LOG_LEVEL = logging.INFO
+# LOG_FILE = 'log.json'
