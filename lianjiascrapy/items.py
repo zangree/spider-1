@@ -174,3 +174,12 @@ class LianJiaXiaoQuDetItem(scrapy.Item):
     lng = scrapy.Field()
     lat = scrapy.Field()
 
+class FangXiaoQuURLItem(scrapy.Item):
+    name = scrapy.Field()
+    url = scrapy.Field()
+
+class FangXiaoQuDetItem(scrapy.Item):
+    name = scrapy.Field()
+    zone = scrapy.Field()
+    price = 
+    address = 
