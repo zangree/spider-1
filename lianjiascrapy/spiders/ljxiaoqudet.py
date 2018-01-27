@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import json
+import requests
 import scrapy
 from lianjiascrapy.items import LianJiaXiaoQuDetItem
 
@@ -19,13 +20,13 @@ class LianJiaXiaoQuDet(scrapy.Spider):
 
     def parse(self, response):
         item = LianJiaXiaoQuDetItem()
-        name = resposne.xpath('//h1[@class="detailTitle"]/text()').extract()
+        name = response.xpath('//h1[@class="detailTitle"]/text()').extract()
         item['name'] = name[0].strip()
         price = response.xpath('//span[@class="xiaoquUnitPrice"]/text()').extract()
         item['price'] = price[0].strip()
-        district = reponse.xpath('//div[@class="fl l-txt"]/a[3]/text()').extract()
+        district = response.xpath('//div[@class="fl l-txt"]/a[3]/text()').extract()
         item['district'] = district[0].strip()
-        region = response.xpath('//div[@class="fl l-txt"]/a[4]/text()')
+        region = response.xpath('//div[@class="fl l-txt"]/a[4]/text()').extract()
         item['region'] = region[0].strip()
         address = response.xpath('//div[@class="xiaoquDetailHeaderContent clear"]/div/div/text()').extract()
         item['address'] = address[0].strip()
