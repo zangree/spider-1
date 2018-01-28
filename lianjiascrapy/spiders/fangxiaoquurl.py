@@ -29,7 +29,7 @@ class LianJiaXiaoQuUrl(scrapy.Spider):
         item = FangXiaoQuURLItem()
         for xiaoqu in response.xpath('//div[@class="list list_free xinfang"]/dl'):
             url = xiaoqu.xpath('.//dd[@class="house_msg"]//a/@href').extract()
-            item['url'] = 'http://bj.sofang.com' + url[0].strip()
+            item['url'] = 'http://bj.sofang.com' + url[0].strip().replace('esfindex', 'esfbd')
             name = xiaoqu.xpath('.//dd[@class="house_msg"]//a/text()').extract()
             item['name'] = name[0].strip()
             yield item
