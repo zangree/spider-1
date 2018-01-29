@@ -40,7 +40,7 @@ class LianJiaXiaoQuDet(scrapy.Spider):
             item['price'] = unicode('暂无信息', 'utf-8')
         address = response.xpath('//ul[@class="build_info"]/li[21]/span[2]/text()').extract()
         if address:
-            item['address'] = address[0].strip()
+            item['address'] = address[0].strip('[').strip(']').strip()
         else:
             item['address'] = unicode('暂无信息', 'utf-8')
         huanxian = response.xpath('//ul[@class="build_info"]/li[5]/span[2]/text()').extract()
@@ -130,9 +130,9 @@ class LianJiaXiaoQuDet(scrapy.Spider):
         else:
             item['lng'] = unicode('暂无信息', 'utf-8')
             item['lat'] = unicode('暂无信息', 'utf-8')
-        url = response.xpath('//ul[@class="build_info"]/li[13]/span[2]/text()').extract()
+        url = response.url
         if url:
-            item['url'] = url[0].strip()
+            item['url'] = url.strip()
         else:
             item['url'] = unicode('暂无信息', 'utf-8')
         yield item

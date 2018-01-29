@@ -10,7 +10,7 @@ class LianJiaXiaoQuUrl(scrapy.Spider):
     def start_requests(self):
         start_urls = []
         start_domains = [
-            ('http://bj.sofang.com/saleesb/area/aa10', 2),
+            ('http://bj.sofang.com/saleesb/area/aa10', 23),
             # ('https://bj.lianjia.com/xiaoqu/tongzhou/', 22),
             # ('https://bj.lianjia.com/xiaoqu/changping/', 27),
             # ('https://bj.lianjia.com/xiaoqu/daxing/', 16),
