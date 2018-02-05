@@ -17,7 +17,10 @@ class LianJiaXiaoQuUrl(scrapy.Spider):
             # ('https://bj.lianjia.com/xiaoqu/yizhuangkaifaqu/', 5),
             # ('https://bj.lianjia.com/xiaoqu/shunyi/', 12),
             # ('https://bj.lianjia.com/xiaoqu/mentougou/', 8),
-            # ('https://bj.lianjia.com/xiaoqu/miyun/', 5)
+            # ('https://bj.lianjia.com/xiaoqu/miyun/', 5),
+            # ('https://bj.lianjia.com/xiaoqu/pinggu/', 2),
+            ('https://bj.lianjia.com/xiaoqu/huairou/', 3)
+
         ]
         for item, pages in start_domains:
             for i in range(1, pages):
@@ -29,7 +32,6 @@ class LianJiaXiaoQuUrl(scrapy.Spider):
         item = LianJiaXiaoQuURLItem()
         for xiaoqu in response.xpath('//ul[@class="listContent"]/li'):
             url = xiaoqu.xpath('.//div[@class="title"]/a/@href').extract()
-            print(url)
             item['url'] = url[0].strip()
             name = xiaoqu.xpath('.//div[@class="title"]/a/text()').extract()
             item['name'] = name[0].strip()
