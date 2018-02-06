@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-
+# time: 2018/02/05
 import json
 import requests
 import scrapy
@@ -13,7 +13,7 @@ class LianJiaXiaoQuDet(scrapy.Spider):
 
     def start_requests(self):
         start_urls = []
-        with open('fangshan.json') as f:
+        with open('chaoyang.json') as f:
             for item in f.readlines():
                 item = json.loads(item)
                 req = scrapy.Request(item['url'])
