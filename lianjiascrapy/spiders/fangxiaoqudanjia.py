@@ -20,7 +20,27 @@ class FangXiaoQuDanJiaSpider(scrapy.Spider):
             # ,
             # ('http://esf.fang.com/housing/3__1_0_0_0_', 52) # xicheng
             # ,
-            ('http://esf.fang.com/housing/7__1_0_0_0_', 10) # shijingshan
+            # ('http://esf.fang.com/housing/7__1_0_0_0_', 10) # shijingshan
+            # ,
+            # ('http://esf.fang.com/housing/12__0_0_0_0_1_0_0_0/') # changping
+            # ,
+            # ('http://esf.fang.com/housing/585__0_0_0_0_1_0_0_0/') # daxing
+            # ,
+            # ('http://esf.fang.com/housing/10__0_0_0_0_1_0_0_0/') # tongzhou
+            # ,
+            # ('http://esf.fang.com/housing/11__0_0_0_0_1_0_0_0/') # shunyi
+            # ,
+            # ('http://esf.fang.com/housing/8__0_0_0_0_1_0_0_0/') # fangshan
+            # ,
+            # ('http://esf.fang.com/housing/13__0_0_0_0_1_0_0_0/') # miyun
+            # ,
+            # ('http://esf.fang.com/housing/9__0_0_0_0_1_0_0_0/') # mentougou
+            # ,
+            # ('http://esf.fang.com/housing/14__0_0_0_0_1_0_0_0/') # huairou
+            # ,
+            # ('http://esf.fang.com/housing/15__0_0_0_0_1_0_0_0/') # yanqing
+            # ,
+            # ('http://esf.fang.com/housing/16__0_0_0_0_1_0_0_0/') # pinggu
         ]
         for item, pages in start_domians:
             for i in range(1, pages):
