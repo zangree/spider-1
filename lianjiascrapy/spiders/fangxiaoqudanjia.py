@@ -10,41 +10,42 @@ class FangXiaoQuDanJiaSpider(scrapy.Spider):
     def start_requests(self):
         start_urls = []
         start_domians = [
-            # ('http://esf.fang.com/housing/1__1_0_0_0_', 64) # chaoyang
+            # ('http://esf.fang.com/housing/1__1_0_0_0_0', 64) # chaoyang
             # ,
-            # ('http://esf.fang.com/housing/0__1_0_0_0_', 64) # haidian
+            # ('http://esf.fang.com/housing/0__1_0_0_0_0', 64) # haidian
             # ,
-            # ('http://esf.fang.com/housing/6__1_0_0_0_', 44) # fengtai
+            # ('http://esf.fang.com/housing/6__1_0_0_0_0', 44) # fengtai
             # ,
-            # ( 'http://esf.fang.com/housing/2__1_0_0_0_', 33) # dongcheng
+            # ( 'http://esf.fang.com/housing/2__1_0_0_0_0', 33) # dongcheng
             # ,
-            # ('http://esf.fang.com/housing/3__1_0_0_0_', 52) # xicheng
+            # ('http://esf.fang.com/housing/3__1_0_0_0_0', 52) # xicheng
             # ,
-            # ('http://esf.fang.com/housing/7__1_0_0_0_', 10) # shijingshan
+            # ('http://esf.fang.com/housing/7__1_0_0_0_0', 10) # shijingshan
             # ,
-            # ('http://esf.fang.com/housing/12__0_0_0_0_1_0_0_0/') # changping
+            #______________________________________________________________________#
+            # ('http://esf.fang.com/housing/12__1_0_0_0_', 23) # changping
             # ,
-            # ('http://esf.fang.com/housing/585__0_0_0_0_1_0_0_0/') # daxing
+            # ('http://esf.fang.com/housing/585__1_0_0_0_', 18) # daxing
             # ,
-            # ('http://esf.fang.com/housing/10__0_0_0_0_1_0_0_0/') # tongzhou
+            # ('http://esf.fang.com/housing/10__1_0_0_0_', 23) # tongzhou
             # ,
-            # ('http://esf.fang.com/housing/11__0_0_0_0_1_0_0_0/') # shunyi
+            # ('http://esf.fang.com/housing/11__1_0_0_0_', 11) # shunyi
             # ,
-            # ('http://esf.fang.com/housing/8__0_0_0_0_1_0_0_0/') # fangshan
+            # ('http://esf.fang.com/housing/8__1_0_0_0_', 17) # fangshan
             # ,
-            # ('http://esf.fang.com/housing/13__0_0_0_0_1_0_0_0/') # miyun
+            # ('http://esf.fang.com/housing/13__1_0_0_0_', 9) # miyun
             # ,
-            # ('http://esf.fang.com/housing/9__0_0_0_0_1_0_0_0/') # mentougou
+            # ('http://esf.fang.com/housing/9__1_0_0_0_', 10) # mentougou
             # ,
-            # ('http://esf.fang.com/housing/14__0_0_0_0_1_0_0_0/') # huairou
+            # ('http://esf.fang.com/housing/14__1_0_0_0_', 7) # huairou
             # ,
-            # ('http://esf.fang.com/housing/15__0_0_0_0_1_0_0_0/') # yanqing
+            # ('http://esf.fang.com/housing/15__1_0_0_0_', 4) # yanqing
             # ,
-            # ('http://esf.fang.com/housing/16__0_0_0_0_1_0_0_0/') # pinggu
+            # ('http://esf.fang.com/housing/16__1_0_0_0_', 5) # pinggu
         ]
         for item, pages in start_domians:
             for i in range(1, pages):
-                url = item + str(i) + '_0_0/'
+                url = item + str(i) + '_0_0_0/'
                 start_urls.append(scrapy.Request(url))
         return start_urls
 
