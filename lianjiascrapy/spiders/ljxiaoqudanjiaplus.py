@@ -10,12 +10,12 @@ class LJXiaoquDanjiaSpider(scrapy.Spider):
     def start_requests(self):
         start_urls = []
         start_domains = []
-        xiaoqufilename = ""
+        xiaoqufilename = "ljchaoyangxiaoquurl.txt"
         with open(xiaoqufilename) as f:
             for item in f:
                 start_domains.append(item)
 
-        for url in start_domains[:10]:
+        for url in start_domains[:]:
             start_urls.append(scrapy.Request(url.strip()))
 
         return start_urls
