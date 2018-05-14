@@ -11,14 +11,19 @@ class LJXiaoquDanjiaSpider(scrapy.Spider):
         start_urls = []
         start_domains = [
             # ('http://bj.lianjia.com/xiaoqu/dongcheng/', 40)
+            # ('http://bj.ke.com/xiaoqu/dongcheng/', 40)
             # ,
             #  ('http://bj.lianjia.com/xiaoqu/xicheng/', 56)
+            #  ('http://bj.ke.com/xiaoqu/xicheng/', 56)
             # ,
             # ('http://bj.lianjia.com/xiaoqu/chaoyang/', 62)
+            # ('http://bj.ke.com/xiaoqu/chaoyang/', 62)
             # ,
             # ('http://bj.lianjia.com/xiaoqu/haidian/', 58)
+            # ('http://bj.ke.com/xiaoqu/haidian/', 58)
             # ,
             # ('http://bj.lianjia.com/xiaoqu/fengtai/', 42)
+            # ('http://bj.ke.com/xiaoqu/fengtai/', 42)
             # ,
             # ('http://bj.lianjia.com/xiaoqu/shijingshan/', 9)
             # ,
