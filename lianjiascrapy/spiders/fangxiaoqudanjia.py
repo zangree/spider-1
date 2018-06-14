@@ -20,11 +20,14 @@ class FangXiaoQuDanJiaSpider(scrapy.Spider):
             # ,
             # ('http://esf.fang.com/housing/3__1_0_0_0_', 52) # xicheng
             # ,
-            ('http://esf.fang.com/housing/7__1_0_0_0_', 10) # shijingshan
+            # ('http://esf.fang.com/housing/7__1_0_0_0_', 10) # shijingshan
+            # ,
+            # ('http://esf.fang.com/housing/12__1_0_0_0_', 23)
+            ,
         ]
         for item, pages in start_domians:
             for i in range(1, pages):
-                url = item + str(i) + '_0_0/'
+                url = item + str(i) + '_0_0_0/'
                 start_urls.append(scrapy.Request(url))
         return start_urls
 
