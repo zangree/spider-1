@@ -15,7 +15,7 @@ class LianJiaXiaoQuUrl(scrapy.Spider):
             # ('https://bj.lianjia.com/xiaoqu/chaoyang/', 62),
             # ('https://bj.lianjia.com/xiaoqu/haidian/', 58),
             # ('https://bj.lianjia.com/xiaoqu/fengtai/', 41),
-            ('https://bj.lianjia.com/xiaoqu/shijingshan/', 9),
+            # ('https://bj.lianjia.com/xiaoqu/shijingshan/', 9),
             # ('https://bj.lianjia.com/xiaoqu/fangshan/', 20),
             # ('https://bj.lianjia.com/xiaoqu/tongzhou/', 22),
             # ('https://bj.lianjia.com/xiaoqu/changping/', 27),

@@ -10,37 +10,42 @@ class LJXiaoquDanjiaSpider(scrapy.Spider):
     def start_requests(self):
         start_urls = []
         start_domains = [
-            # ('http://bj.lianjia.com/xiaoqu/dongcheng/', 39)
+            # ('http://bj.lianjia.com/xiaoqu/dongcheng/', 40)
+            # ('http://bj.ke.com/xiaoqu/dongcheng/', 40)
             # ,
-            #  ('http://bj.lianjia.com/xiaoqu/xicheng/', 54)
+            #  ('http://bj.lianjia.com/xiaoqu/xicheng/', 56)
+            #  ('http://bj.ke.com/xiaoqu/xicheng/', 56)
             # ,
-            # ('http://bj.lianjia.com/xiaoqu/chaoyang/', 59)
+            # ('http://bj.lianjia.com/xiaoqu/chaoyang/', 62)
+            # ('http://bj.ke.com/xiaoqu/chaoyang/', 62)
             # ,
-            # ('http://bj.lianjia.com/xiaoqu/haidian/', 56)
+            # ('http://bj.lianjia.com/xiaoqu/haidian/', 58)
+            # ('http://bj.ke.com/xiaoqu/haidian/', 58)
             # ,
-            # ('http://bj.lianjia.com/xiaoqu/fengtai/', 40)
+            # ('http://bj.lianjia.com/xiaoqu/fengtai/', 42)
+            # ('http://bj.ke.com/xiaoqu/fengtai/', 42)
             # ,
-            #('http://bj.lianjia.com/xiaoqu/shijingshan/', 9)
+            # ('http://bj.lianjia.com/xiaoqu/shijingshan/', 9)
             # ,
-            #('http://bj.lianjia.com/xiaoqu/tongzhou/', 23)
+            # ('http://bj.lianjia.com/xiaoqu/tongzhou/', 23)
             # ,
-            #('http://bj.lianjia.com/xiaoqu/changping/', 27)
+            # ('http://bj.lianjia.com/xiaoqu/changping/', 27)
             # ,
-            #('http://bj.lianjia.com/xiaoqu/daxing/', 27)
+            # ('http://bj.lianjia.com/xiaoqu/daxing/', 27)
             # ,
-            #('http://bj.lianjia.com/xiaoqu/yizhuangkaifaqu/', 5)
+            # ('http://bj.lianjia.com/xiaoqu/yizhuangkaifaqu/', 5)
             # ,
-            #('http://bj.lianjia.com/xiaoqu/shunyi/', 12)
+            # ('http://bj.lianjia.com/xiaoqu/shunyi/', 12)
             # ,
-            #('http://bj.lianjia.com/xiaoqu/fangshan/', 20)
+            # ('http://bj.lianjia.com/xiaoqu/fangshan/', 20)
             # ,
-            #('http://bj.lianjia.com/xiaoqu/mentougou/', 8)
+            # ('http://bj.lianjia.com/xiaoqu/mentougou/', 8)
             # ,
-            #('http://bj.lianjia.com/xiaoqu/pinggu/', 2)
+            # ('http://bj.lianjia.com/xiaoqu/pinggu/', 2)
             # ,
-            #('http://bj.lianjia.com/xiaoqu/huairou/', 4)
+            # ('http://bj.lianjia.com/xiaoqu/huairou/', 4)
             # ,
-            #('http://bj.lianjia.com/xiaoqu/miyun/', 5)
+            # ('http://bj.lianjia.com/xiaoqu/miyun/', 5)
         ]
         for item, pages in start_domains:
             for i in range(1, pages):
