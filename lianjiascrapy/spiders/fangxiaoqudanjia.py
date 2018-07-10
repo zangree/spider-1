@@ -14,7 +14,7 @@ class FangXiaoQuDanJiaSpider(scrapy.Spider):
             # ,
             # ('http://esf.fang.com/housing/0__1_0_0_0_0', 64) # haidian
             # ,
-            # ('http://esf.fang.com/housing/6__1_0_0_0_0', 44) # fengtai
+            ('http://esf.fang.com/housing/6__1_0_0_0_0', 44) # fengtai
             # ,
             # ( 'http://esf.fang.com/housing/2__1_0_0_0_0', 33) # dongcheng
             # ,
