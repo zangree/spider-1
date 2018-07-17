@@ -204,3 +204,7 @@ class FangXiaoQuDetItem(scrapy.Item):
     lng = scrapy.Field()
     lat = scrapy.Field()
     url = scrapy.Field()
+
+class LJcjurlItem(scrapy.Item):
+    title = scrapy.Field()
+    url = scrapy.Field()
