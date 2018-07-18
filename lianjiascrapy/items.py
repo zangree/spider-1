@@ -232,7 +232,7 @@ class LJcjdetItem(scrapy.Item):
     elevator = scrapy.Field() 
     ljid = scrapy.Field() 
     jiaoyiquanshu = scrapy.Field() 
-    pulishtime = scrapy.Field() 
+    publishtime = scrapy.Field() 
     yongtu = scrapy.Field() 
     nianxian = scrapy.Field() 
     suoshu = scrapy.Field() 
