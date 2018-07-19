@@ -210,6 +210,7 @@ class LJcjurlItem(scrapy.Item):
     url = scrapy.Field()
 
 class LJcjdetItem(scrapy.Item):
+    url = scrapy.Field()
     name = scrapy.Field() 
     date = scrapy.Field() 
     total_price = scrapy.Field() 
