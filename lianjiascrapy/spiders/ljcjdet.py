@@ -11,11 +11,11 @@ class LJcjdet(scrapy.Spider):
     def start_requests(self):
         start_urls = []
         urls = []
-        with open('shijingshan.json', encoding="utf-8") as f:
+        with open('xxx.json', encoding="utf-8") as f:
             for item in f:
                 item = json.loads(item)
                 urls.append(item['url'])
-        for i in range(0, 1000):
+        for i in range(, ):
             start_urls.append(scrapy.Request(urls[i]))
         return start_urls
 
@@ -36,11 +36,11 @@ class LJcjdet(scrapy.Spider):
             item['total_price'] = total_price[0].strip()
         else:
             item['total_price'] = '暂无信息'
-        # unit_price = response.xpath('//div[@class="house-title"]//h1/text()').extract()
-        # if unit_price:
-        #     item['unit_price'] = unit_price[0].strip()
-        # else:
-        #     item['unit_price'] = '暂无信息'
+        unit_price = response.xpath('//span[@class="dealTotalPrice"]/span/b/text()').extract()
+        if unit_price:
+            item['unit_price'] = unit_price[0].strip()
+        else:
+            item['unit_price'] = '暂无信息'
         acreage = response.xpath('//div[@class="base"]/div[@class="content"]/ul/li[3]/text()').extract()
         if acreage:
             item['acreage'] = acreage[0].strip()
