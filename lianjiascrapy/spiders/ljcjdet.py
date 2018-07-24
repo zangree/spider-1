@@ -11,11 +11,11 @@ class LJcjdet(scrapy.Spider):
     def start_requests(self):
         start_urls = []
         urls = []
-        with open('xxx.json', encoding="utf-8") as f:
+        with open('xicheng.json', encoding="utf-8") as f:
             for item in f:
                 item = json.loads(item)
                 urls.append(item['url'])
-        for i in range(, ):
+        for i in range(0, 3750):
             start_urls.append(scrapy.Request(urls[i]))
         return start_urls
 

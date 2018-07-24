@@ -210,7 +210,7 @@ class LJcjurlItem(scrapy.Item):
     url = scrapy.Field()
 
 class LJcjdetItem(scrapy.Item):
-<<<<<<< HEAD
+    url = scrapy.Field()
     name = scrapy.Field()           # 房产名称 
     date = scrapy.Field()           # 成交时间 
     total_price = scrapy.Field()    # 成交总价 
@@ -221,48 +221,20 @@ class LJcjdetItem(scrapy.Item):
     publish_price = scrapy.Field()  # 挂牌价格 
     rooms = scrapy.Field()          # 房屋户型 
     floor = scrapy.Field()          # 所在楼层 
-    fact_acreage = scrapy.Field()   # 建筑面积 
+    # building_acreage = scrapy.Field()# 建筑面积 
+    fact_acreage = scrapy.Field() # 套内面积
     buildingType = scrapy.Field()   # 建筑类型 
-    direction = scrapy.Field()      # 房屋类型 
+    direction = scrapy.Field()      # 房屋朝向 
     time = scrapy.Field()           # 建成年代 
     zhuangxiu = scrapy.Field()      # 装修情况 
     jianzhujiegou = scrapy.Field()  # 建筑结构 
     gongnuan = scrapy.Field()       # 供暖 
     tihu = scrapy.Field()           # 梯户比例 
-    chanquan = scrapy.Field()       # 产权比例 
+    chanquan = scrapy.Field()       # 产权年限 
     elevator = scrapy.Field()       # 配备电梯 
     ljid = scrapy.Field()           # 链家编号 
     jiaoyiquanshu = scrapy.Field()  # 交易权属 
     publishtime = scrapy.Field()    # 挂牌时间 
     yongtu = scrapy.Field()         # 房屋用途 
     nianxian = scrapy.Field()       # 房屋年限 
-    suoshu = scrapy.Field()         # 房权所属 
-=======
-    url = scrapy.Field()
-    name = scrapy.Field() 
-    date = scrapy.Field() 
-    total_price = scrapy.Field() 
-    unit_price = scrapy.Field() 
-    acreage = scrapy.Field() 
-    tingshi = scrapy.Field() 
-    period = scrapy.Field() 
-    publish_price = scrapy.Field() 
-    rooms = scrapy.Field() 
-    floor = scrapy.Field() 
-    fact_acreage = scrapy.Field() 
-    buildingType = scrapy.Field() 
-    direction = scrapy.Field() 
-    time = scrapy.Field() 
-    zhuangxiu = scrapy.Field() 
-    jianzhujiegou = scrapy.Field() 
-    gongnuan = scrapy.Field() 
-    tihu = scrapy.Field() 
-    chanquan = scrapy.Field() 
-    elevator = scrapy.Field() 
-    ljid = scrapy.Field() 
-    jiaoyiquanshu = scrapy.Field() 
-    publishtime = scrapy.Field() 
-    yongtu = scrapy.Field() 
-    nianxian = scrapy.Field() 
-    suoshu = scrapy.Field() 
->>>>>>> f6802bf50015e289dd26a738224f69620cd968e1
+    suoshu = scrapy.Field()         # 房权所属
