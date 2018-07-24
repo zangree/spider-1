@@ -67,7 +67,7 @@ class LJcjdet(scrapy.Spider):
             item['floor'] = floor[0].strip()
         else:
             item['floor'] = '暂无信息'
-        fact_acreage = response.xpath('/div[@class="base"]//div[@class="content"]/ul/li[5]/text()').extract()
+        fact_acreage = response.xpath('//div[@class="base"]/div[@class="content"]/ul/li[5]/text()').extract()
         if fact_acreage:
             item['fact_acreage'] = fact_acreage[0].strip()
         else:
