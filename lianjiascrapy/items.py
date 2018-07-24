@@ -210,6 +210,7 @@ class LJcjurlItem(scrapy.Item):
     url = scrapy.Field()
 
 class LJcjdetItem(scrapy.Item):
+<<<<<<< HEAD
     name = scrapy.Field()           # 房产名称 
     date = scrapy.Field()           # 成交时间 
     total_price = scrapy.Field()    # 成交总价 
@@ -236,3 +237,32 @@ class LJcjdetItem(scrapy.Item):
     yongtu = scrapy.Field()         # 房屋用途 
     nianxian = scrapy.Field()       # 房屋年限 
     suoshu = scrapy.Field()         # 房权所属 
+=======
+    url = scrapy.Field()
+    name = scrapy.Field() 
+    date = scrapy.Field() 
+    total_price = scrapy.Field() 
+    unit_price = scrapy.Field() 
+    acreage = scrapy.Field() 
+    tingshi = scrapy.Field() 
+    period = scrapy.Field() 
+    publish_price = scrapy.Field() 
+    rooms = scrapy.Field() 
+    floor = scrapy.Field() 
+    fact_acreage = scrapy.Field() 
+    buildingType = scrapy.Field() 
+    direction = scrapy.Field() 
+    time = scrapy.Field() 
+    zhuangxiu = scrapy.Field() 
+    jianzhujiegou = scrapy.Field() 
+    gongnuan = scrapy.Field() 
+    tihu = scrapy.Field() 
+    chanquan = scrapy.Field() 
+    elevator = scrapy.Field() 
+    ljid = scrapy.Field() 
+    jiaoyiquanshu = scrapy.Field() 
+    publishtime = scrapy.Field() 
+    yongtu = scrapy.Field() 
+    nianxian = scrapy.Field() 
+    suoshu = scrapy.Field() 
+>>>>>>> f6802bf50015e289dd26a738224f69620cd968e1

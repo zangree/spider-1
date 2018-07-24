@@ -21,6 +21,7 @@ class LJcjdet(scrapy.Spider):
 
     def parse(self, response):
         item = LJcjdetItem()
+        item['url'] = response.url
         name = response.xpath('//div[@class="house-title"]//h1/text()').extract()
         if name:
             item['name'] = name[0].strip()
