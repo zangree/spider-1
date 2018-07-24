@@ -37,7 +37,7 @@ class LJcjdet(scrapy.Spider):
             item['total_price'] = total_price[0].strip()
         else:
             item['total_price'] = '暂无信息'
-        unit_price = response.xpath('//span[@class="dealTotalPrice"]/span/b/text()').extract()
+        unit_price = response.xpath('//div[@class="price"]/b/text()').extract()
         if unit_price:
             item['unit_price'] = unit_price[0].strip()
         else:
