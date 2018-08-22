@@ -11,7 +11,7 @@ class MyPipeline(object):
 
     def _setFileName(self, filename):
         newfilename = filename
-        self.file = codes.open(newfilename, 'w', encoding='utf-8')
+        self.file = codecs.open(newfilename, 'w', encoding='utf-8')
 
     def process_item(self, item, spider):
         line = json.dumps(dict(item), ensure_ascii=False) + "\n"

@@ -236,3 +236,8 @@ class LJcjdetItem(scrapy.Item):
     yongtu = scrapy.Field() 
     nianxian = scrapy.Field() 
     suoshu = scrapy.Field() 
+
+class LJappxiaoquItem(scrapy.Item):
+    name = scrapy.Field()
+    avg_unit_price = scrapy.Field()
+    community_id = scrapy.Field()
